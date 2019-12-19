@@ -32,9 +32,6 @@ class Items extends React.Component {
           />
           <div className="card-body">
             <h5 className="card-title">{item.name}</h5>
-            {/* <Link to={`/recipe/${recipe.id}`} className="btn custom-button">
-              View Item Details
-            </Link> */}
           </div>
         </div>
             </div>
@@ -49,7 +46,7 @@ class Items extends React.Component {
           );
 
           return(
-            <div className="row">
+            <div className="col-sm-10">
               {items.length > 0 ? allItems : noItems}
             </div>
           );

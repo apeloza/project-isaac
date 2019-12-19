@@ -16,11 +16,10 @@ class FlexSearch extends React.Component {
     }
 
     onSubmit(event) {
-      console.log('submitting ...');
       event.preventDefault();
       const url ="/search/flex"
       const { searchTerms } = this.state;
-      if(searchTerms.length === 0) 
+       if(searchTerms.length === 0) 
       return;
 
       const params = {
@@ -40,12 +39,12 @@ class FlexSearch extends React.Component {
 
     render(){
         return(
-            <div>
+            <div className="col-sm-10">
                 <form onSubmit={this.onSubmit}>
                   <div className="row">
-                    <div className="col-sm">
+                    <div className="col-sm mb-2">
                       <input name="searchTerms" id="SearchTerms" onChange={this.onChange} placeholder="Search for items ..." type="text"/>
-                      <button type="submit">Search</button>
+                      <button className="btn btn-primary ml-2" type="submit">Search</button>
                     </div>
                   </div>
                 </form>
