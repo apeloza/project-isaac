@@ -1,6 +1,32 @@
+.item-modal-image{
+    height: 128px;
+    width: 128px;
+    text-align: center;
+    display: inline-block;
+}
+
+.pixel-image{
+    image-rendering: pixelated;
+}
+
+.image-container{
+    width: 100%;
+}
+
+.item-modal-header{
+    text-align: center;
+    width: 100%;
+}
+
+.modal-btn-close{
+    float: right;
+}
+
+// ANIMATIONS
+
 .ReactModal__Overlay {
     opacity: 0;
-    transition: opacity 1200ms ease-in-out;
+    transition: opacity 800ms ease-in-out;
 }
 
 .ReactModal__Overlay--after-open{

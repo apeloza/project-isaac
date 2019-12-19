@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all.order(name: :desc)
+    @items = Item.all.order(name: :asc)
   end
 
   def show

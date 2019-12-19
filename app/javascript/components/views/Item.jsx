@@ -29,7 +29,7 @@ class Item extends React.Component {
               <div className="card mb-4" onClick={this.handleOpenModal}>
                 <img
                 src={this.props.item.image_filename}
-                className="card-img-top"
+                className="card-img-top pixel-image"
                 alt={`${this.props.item.name} image`}
                 />
                 <div className="card-body">
@@ -38,10 +38,20 @@ class Item extends React.Component {
               </div>
               <Modal
               isOpen={this.state.showModal}
+              closeTimeoutMS={800}
               contentLabel={this.props.item.name}>
-                  <h2>{this.props.item.name}</h2>
-                  <h5><em>{this.props.item.tagline}</em></h5>
-                  <button className="btn btn-primary" onClick={this.handleCloseModal}>Close</button>
+                <button className="btn btn-danger modal-btn-close" aria-label="Close" onClick={this.handleCloseModal}>X</button>
+                <div className="modal-header item-modal-header">
+                    <div className="image-container">
+                        <img className="item-modal-image pixel-image" src={this.props.item.image_filename}/>
+                    </div>
+                </div>
+                <h2 align="center" className="item-name mt-1">{this.props.item.name}</h2>
+                <h5 align="center"><em>"{this.props.item.tagline}</em>"</h5>
+                <div className="item-description-box mt-4">
+                <p>{this.props.item.description}</p>
+                </div>
+        
               </Modal>
             </div>
         )
