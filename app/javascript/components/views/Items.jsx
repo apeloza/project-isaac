@@ -23,7 +23,7 @@ class Items extends React.Component {
     render() {
         const { items } = this.state;
         const allItems = items.map((item, index) => (
-            <div key={index} className="col-md-6 col-lg-4">
+            <div key={index} className="col-sm-4 col-lg-4">
             <div className="card mb-4">
             <img
             src={item.image_filename}
@@ -47,7 +47,9 @@ class Items extends React.Component {
 
           return(
             <div className="col-sm-10">
+              <div className="row">
               {items.length > 0 ? allItems : noItems}
+              </div>
             </div>
           );
     }
