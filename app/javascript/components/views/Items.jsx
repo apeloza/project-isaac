@@ -1,6 +1,8 @@
 import React from 'react';
+import Item from './Item';
 
 class Items extends React.Component {
+
     constructor(props){
         super(props);
         this.state = {
@@ -23,18 +25,7 @@ class Items extends React.Component {
     render() {
         const { items } = this.state;
         const allItems = items.map((item, index) => (
-            <div key={index} className="col-sm-4 col-lg-4">
-            <div className="card mb-4">
-            <img
-            src={item.image_filename}
-            className="card-img-top"
-            alt={`${item.name} image`}
-          />
-          <div className="card-body">
-            <h5 className="card-title">{item.name}</h5>
-          </div>
-        </div>
-            </div>
+          <Item key={index} item={item} />
         ));
 
         const noItems = (
