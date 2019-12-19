@@ -1,13 +1,19 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import FlexSearchWrapper from "../components/wrappers/FlexSearchWrapper";
-import ItemListWrapper from "../components/wrappers/ItemListWrapper";
+import NavMenu from "../components/layout/NavMenu";
+import FlexSearch from "../components/views/FlexSearch";
+import Items from "../components/views/Items";
 
 export default (
   <Router>
-    <Switch>
-      <Route path="/" exact component={FlexSearchWrapper} />
-      <Route path="/items" exact component={ItemListWrapper} />
-    </Switch>
+    <div className="col-sm-2">
+      <NavMenu/>
+    </div>
+    <div className="col-sm-10">
+      <Switch>
+        <Route path="/" exact component={FlexSearch} />
+        <Route path="/items" exact component={Items} />
+      </Switch>
+    </div>
   </Router>
 );

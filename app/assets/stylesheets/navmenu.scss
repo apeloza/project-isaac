@@ -1,3 +1,7 @@
 .link-item{
-    text-align: left;
+    text-align: center;
+
+    &.active{
+        color: black;
+    }
 };

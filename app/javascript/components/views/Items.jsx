@@ -37,11 +37,11 @@ class Items extends React.Component {
           );
 
           return(
-            <div className="col-sm-10">
+            <>
               <div className="row">
               {items.length > 0 ? allItems : noItems}
               </div>
-            </div>
+            </>
           );
     }
 }

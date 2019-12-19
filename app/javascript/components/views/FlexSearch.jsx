@@ -39,7 +39,7 @@ class FlexSearch extends React.Component {
 
     render(){
         return(
-            <div className="col-sm-10">
+            <>
                 <form onSubmit={this.onSubmit}>
                   <div className="row">
                     <div className="col-sm mb-2">
@@ -48,7 +48,7 @@ class FlexSearch extends React.Component {
                     </div>
                   </div>
                 </form>
-            </div>
+            </>
             
         )
     }
