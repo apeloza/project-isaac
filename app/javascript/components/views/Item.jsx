@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import ItemAltar from '../../../assets/images/items/item_altar';
 
 class Item extends React.Component {
     constructor(props){
@@ -41,10 +42,16 @@ class Item extends React.Component {
               closeTimeoutMS={800}
               contentLabel={this.props.item.name}>
                 <button className="btn btn-danger modal-btn-close" aria-label="Close" onClick={this.handleCloseModal}>X</button>
-                <div className="modal-header item-modal-header">
+                <div className="modal-header">
+                    <div className="item-modal-header">
                     <div className="image-container">
                         <img className="item-modal-image pixel-image" src={this.props.item.image_filename}/>
                     </div>
+                    <div className="image-container">
+                        <img className="pixel-image item-altar" src={ItemAltar}/>
+                    </div>  
+                    </div>
+                    
                 </div>
                 <h2 align="center" className="item-name mt-1">{this.props.item.name}</h2>
                 <h5 align="center"><em>"{this.props.item.tagline}</em>"</h5>

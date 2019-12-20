@@ -31,7 +31,7 @@ class Items extends React.Component {
         const noItems = (
             <div className="vw-100 vh-50 d-flex align-items-center justify-content-center">
               <h4>
-                No items were returned. Try again with the search above.
+                No items were returned.
               </h4>
             </div>
           );

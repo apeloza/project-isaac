@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_18_195720) do
+ActiveRecord::Schema.define(version: 2019_12_20_044600) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,11 @@ ActiveRecord::Schema.define(version: 2019_12_18_195720) do
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.boolean "is_activated"
+    t.string "recharge"
+    t.string "character_filename"
+    t.string "tear_filename"
   end
 
 end
