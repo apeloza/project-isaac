@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavMenu from "../components/layout/NavMenu";
 import FlexSearch from "../components/views/FlexSearch";
 import Items from "../components/views/Items";
+import MyBuild from "../components/views/MyBuild";
 
 export default (
   <Router>
@@ -13,6 +14,7 @@ export default (
       <Switch>
         <Route path="/" exact component={FlexSearch} />
         <Route path="/items" exact component={Items} />
+        <Route path="/my-build" exact component={MyBuild} />
       </Switch>
     </div>
   </Router>

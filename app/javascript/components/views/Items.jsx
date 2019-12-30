@@ -12,7 +12,7 @@ class Items extends React.Component {
 
     componentDidMount(){
         const url = "/items/index";
-        fetch(url)
+        fetch(url)  
         .then(response => {
             if(response.ok) {
                 return response.json();

@@ -25,6 +25,15 @@ class Item extends React.Component {
     }
 
     render(){
+        const activatedItemStats = (
+            <>
+                <h5>Active</h5>
+                <h5>Recharge Rate {this.props.item.recharge}</h5>
+            </>
+        );
+        const passiveItemStats = (
+          <h5>Passive</h5>
+        );
         return(
             <div className="col-sm-4 col-lg-4">
               <div className="card mb-4" onClick={this.handleOpenModal}>
@@ -55,6 +64,7 @@ class Item extends React.Component {
                 </div>
                 <h2 align="center" className="item-name mt-1">{this.props.item.name}</h2>
                 <h5 align="center"><em>"{this.props.item.tagline}</em>"</h5>
+                {this.props.item.is_activated === 'Yes' ? activatedItemStats : passiveItemStats}
                 <div className="item-description-box mt-4">
                 <p>{this.props.item.description}</p>
                 </div>

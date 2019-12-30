@@ -23,7 +23,7 @@ def process_item_list(document, css_selector)
       game_id = row_data[1].text.gsub(/\W/, '').to_i
       item_description = row_data[4].text
 
-      [
+      [ 
         slug,
         {
           game_id: game_id,

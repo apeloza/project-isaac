@@ -1,10 +1,12 @@
 import React from 'react';
+import Item from './Item';
 
 class FlexSearch extends React.Component {
     constructor(props){
         super(props);
         this.state = {
           searchTerms: "",
+          searchResults: [],
         }
 
         this.onChange = this.onChange.bind(this);
@@ -17,27 +19,38 @@ class FlexSearch extends React.Component {
 
     onSubmit(event) {
       event.preventDefault();
-      const url ="/search/flex"
       const { searchTerms } = this.state;
+      const url ="/items/search?q=" + searchTerms;
        if(searchTerms.length === 0) 
       return;
 
-      const params = {
-        searchTerms
-      };
-
       fetch(url, {
         method: "GET",
-        params: JSON.stringify(params)
       }).then(response => {
         if(response.ok){
           return response.json();
         }
         throw new Error("Issue with network response. Oops!")
-      }).catch(error => console.log(error.message));
-    }
+      }).then(response => {
+        console.log(response);
+        this.setState({searchResults: response} )
+    }).catch(error => console.log(error.message));
+  }
 
     render(){
+
+      const { searchResults } = this.state;
+        const allResults = searchResults.map((item, index) => (
+          <Item key={index} item={item} />
+        ));
+
+        const noResults = (
+          <div className="vw-100 vh-50 d-flex align-items-center justify-content-center">
+            <h4>
+              No results were returned.
+            </h4>
+          </div>
+        );
         return(
             <>
                 <form onSubmit={this.onSubmit}>
@@ -48,6 +61,9 @@ class FlexSearch extends React.Component {
                     </div>
                   </div>
                 </form>
+                <div className="row">
+                  {searchResults.length > 0 ? allResults : noResults}
+                </div>
             </>
             
         )
