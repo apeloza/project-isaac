@@ -4,6 +4,7 @@ import NavMenu from "../components/layout/NavMenu";
 import FlexSearch from "../components/views/FlexSearch";
 import Items from "../components/views/Items";
 import MyBuild from "../components/views/MyBuild";
+import Login from "../components/views/Login";
 
 export default (
   <Router>
@@ -15,6 +16,7 @@ export default (
         <Route path="/" exact component={FlexSearch} />
         <Route path="/items" exact component={Items} />
         <Route path="/my-build" exact component={MyBuild} />
+        <Route path="/login" exact component={Login} />
       </Switch>
     </div>
   </Router>

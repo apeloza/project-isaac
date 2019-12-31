@@ -13,6 +13,7 @@ class NavMenu extends React.Component {
       <NavLink exact to="/" className="btn btn-link link-item">Flex Search</NavLink>
       <NavLink to="/items" className="btn btn-link link-item">Master Item List</NavLink>
       <NavLink to="/my-build" className="btn btn-link link-item">My Build</NavLink>
+      <NavLink to="/login" className="btn btn-link link-item">Login</NavLink>
     </aside>
     )
   }

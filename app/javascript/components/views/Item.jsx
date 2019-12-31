@@ -1,19 +1,20 @@
 import React from 'react';
 import Modal from 'react-modal';
-import ItemAltar from '../../../assets/images/items/item_altar';
+import ItemAltar from '../../../assets/images/items/item_altar'; //template image for the item modal
 
 class Item extends React.Component {
     constructor(props){
         super(props);
 
         this.state = {
-            showModal : false,
+            showModal : false, // modal boolean for the item
         };
 
-        Modal.setAppElement('#ReactRoot');
+        Modal.setAppElement('#ReactRoot'); //used for accessibility to let screen readers know what is hidden by the modal
 
         this.handleOpenModal = this.handleOpenModal.bind(this);
         this.handleCloseModal = this.handleCloseModal.bind(this);
+        
     }
 
     handleOpenModal(){
@@ -34,6 +35,7 @@ class Item extends React.Component {
         const passiveItemStats = (
           <h5>Passive</h5>
         );
+
         return(
             <div className="col-sm-4 col-lg-4">
               <div className="card mb-4" onClick={this.handleOpenModal}>

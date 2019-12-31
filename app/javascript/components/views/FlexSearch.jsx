@@ -6,7 +6,11 @@ class FlexSearch extends React.Component {
         super(props);
         this.state = {
           searchTerms: "",
-          searchResults: [],
+          searchResults: {
+            items: [],
+            result_count: 0,
+            time_taken: 0,
+          },
         }
 
         this.onChange = this.onChange.bind(this);
@@ -15,6 +19,7 @@ class FlexSearch extends React.Component {
 
     onChange(event) {
       this.setState({ [event.target.name]: event.target.value });
+      this.onSubmit(event); //send out a search even on a change event after cataloguing the change
     }
 
     onSubmit(event) {
@@ -40,15 +45,26 @@ class FlexSearch extends React.Component {
     render(){
 
       const { searchResults } = this.state;
-        const allResults = searchResults.map((item, index) => (
+
+        const allResults = searchResults.items.map((item, index) => (
           <Item key={index} item={item} />
         ));
 
+        //wrapper to conditionally display the search results header
+        const allResultsWithHeader = 
+        <>
+        <div className="row">
+        <h5 className="col-sm-12">Returned {searchResults.result_count} items in {searchResults.time_taken} ms.</h5>
+        </div>
+        <div className="row">
+        {allResults}
+        </div>
+        </>
+
+
         const noResults = (
-          <div className="vw-100 vh-50 d-flex align-items-center justify-content-center">
-            <h4>
-              No results were returned.
-            </h4>
+          <div className="row">
+            <h5>Try a search above to begin!</h5>
           </div>
         );
         return(
@@ -61,9 +77,7 @@ class FlexSearch extends React.Component {
                     </div>
                   </div>
                 </form>
-                <div className="row">
-                  {searchResults.length > 0 ? allResults : noResults}
-                </div>
+                  {searchResults.items.length > 0 ? allResultsWithHeader : noResults}
             </>
             
         )
