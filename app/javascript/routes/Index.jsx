@@ -5,6 +5,7 @@ import FlexSearch from "../components/views/FlexSearch";
 import Items from "../components/views/Items";
 import MyBuild from "../components/views/MyBuild";
 import Login from "../components/views/Login";
+import Register from "../components/views/Register";
 
 export default (
   <Router>
@@ -17,6 +18,7 @@ export default (
         <Route path="/items" exact component={Items} />
         <Route path="/my-build" exact component={MyBuild} />
         <Route path="/login" exact component={Login} />
+        <Route path="/register" exact render={(props) => <Register currentUser={props.currentUser} />} />
       </Switch>
     </div>
   </Router>

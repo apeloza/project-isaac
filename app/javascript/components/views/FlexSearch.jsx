@@ -17,11 +17,13 @@ class FlexSearch extends React.Component {
         this.onSubmit = this.onSubmit.bind(this);
     }
 
+    //updates state to match input fields
     onChange(event) {
       this.setState({ [event.target.name]: event.target.value });
       this.onSubmit(event); //send out a search even on a change event after cataloguing the change
     }
 
+    //start a search
     onSubmit(event) {
       event.preventDefault();
       const { searchTerms } = this.state;
@@ -61,7 +63,7 @@ class FlexSearch extends React.Component {
         </div>
         </>
 
-
+        //placeholder before a search is started
         const noResults = (
           <div className="row">
             <h5>Try a search above to begin!</h5>
