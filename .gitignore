@@ -32,3 +32,4 @@ yarn-debug.log*
 
 # custom ignores
 .history
+dump.rdb
