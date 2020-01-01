@@ -39,11 +39,7 @@ class Item extends React.Component {
         return(
             <div className="item-card">
               <div onClick={this.handleOpenModal}>
-                <img
-                src={this.props.item.image_filename}
-                className="card-img-top pixel-image"
-                alt={`${this.props.item.name} image`}
-                />
+                <img src={this.props.item.image_filename} className="card-img-top pixel-image" alt={`${this.props.item.name} image`} />
                 <div className="item-card-title">
                   {this.props.item.name}
                 </div>
@@ -54,19 +50,14 @@ class Item extends React.Component {
               onRequestClose={this.handleCloseModal}
               contentLabel={this.props.item.name}>
                 <button className="btn btn-danger modal-btn-close" aria-label="Close" onClick={this.handleCloseModal}>X</button>
-                <div className="modal-header">
-                    <div className="item-modal-header">
-                    <div className="image-container">
-                        <img className="item-modal-image pixel-image" src={this.props.item.image_filename}/>
+                <div className="modal-header item-modal-header">
+                    <div className="item-modal-image-container">
+                        <img className="item-modal-image top pixel-image" src={this.props.item.image_filename}/>
+                        <img className="item-modal-image bottom pixel-image" src={ItemAltar}/>
                     </div>
-                    <div className="image-container">
-                        <img className="pixel-image item-altar" src={ItemAltar}/>
-                    </div>  
-                    </div>
-                    
                 </div>
                 <div className="item-modal-title">{this.props.item.name}</div>
-                <div className="item-modal-tagline"><em>"{this.props.item.tagline}</em>"</div>
+                <div className="item-modal-tagline">&quot;{this.props.item.tagline}&quot;</div>
                 {this.props.item.is_activated === 'Yes' ? activatedItemStats : passiveItemStats}
                 <div className="item-description-box mt-4">
                 <p>{this.props.item.description}</p>

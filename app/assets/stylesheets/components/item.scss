@@ -1,15 +1,5 @@
 // ITEM GRID + CARDS
 
-@mixin upheaval {
-    font-family: Upheaval, Arial, sans-serif;
-    color: white;
-    // pixelize font
-    -webkit-font-smoothing : none;
-    // outline
-    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000,
-                 -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
-
 .item-grid {
     display: flex;
     flex-wrap: wrap;
@@ -23,7 +13,8 @@
 }
 
 .item-card-title {
-    @include upheaval;
+    @include font-upheaval;
+    @include font_outline;
 
     position: absolute;
     padding: 10px;
@@ -43,60 +34,84 @@
 
 // ITEM MODAL
 
-.item-modal-title {
-    @include upheaval;
+.item-modal-header {
+    position: relative;
+    border: none;
+}
 
+.modal-btn-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.item-modal-title {
+    @include font-upheaval;
     font-size: 3rem;
     line-height: 2rem;
     text-align: center;
 }
 
 .item-modal-tagline {
+    @include font-isaac;
+    font-size: 1.5rem;
     text-align: center;
 }
 
-// Old item styles
+.item-modal-image-container {
+    position: relative;
+    height: 224px;
+    width: 128px;
+    margin: 0 auto;
+}
 
-.item-modal-image{
+.item-modal-image {
+    position: absolute;
     height: 128px;
     width: 128px;
-    text-align: center;
-    display: inline-block;
 }
+
+.item-modal-image.top {
+    top: 0;
+    left: 0;
+    z-index: 1;
+    animation: image-float-animation ease-in-out 2s infinite;
+}
+
+.item-modal-image.bottom {
+    bottom: 0;
+    left: 0;
+}
+
+@keyframes image-float-animation {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 16px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+// UTILITY
 
 .pixel-image{
     image-rendering: pixelated;
 }
 
-.image-container{
-    width: 100%;
-}
-
-.item-modal-header{
-    text-align: center;
-    width: 100%;
-}
-
-.modal-btn-close{
-    float: right;
-}
-
-.item-altar{
-    width: 108px;
-    height: 96px;
-}
-
-// ANIMATIONS
+// REACT MODAL ANIMATIONS
 
 .ReactModal__Overlay {
     opacity: 0;
     transition: opacity .25s ease-in-out;
 }
 
-.ReactModal__Overlay--after-open{
+.ReactModal__Overlay--after-open {
     opacity: 1;
 }
 
-.ReactModal__Overlay--before-close{
+.ReactModal__Overlay--before-close {
     opacity: 0;
 }

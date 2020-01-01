@@ -13,6 +13,20 @@
   src: url('IsaacGame.ttf') format('truetype');
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: Upheaval, Arial, sans-serif;
+@mixin font-upheaval {
+    font-family: Upheaval, Arial, sans-serif;
+    // pixelize font
+    -webkit-font-smoothing : none;
 }
+
+@mixin font-isaac {
+    font-family: IsaacGame, Arial, sans-serif;
+}
+
+@mixin font_outline {
+    color: white;
+    // outline
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000,
+                 -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
