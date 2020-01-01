@@ -10,12 +10,12 @@ class NavMenu extends React.Component {
   render(){
     return(
       <aside>
-      <NavLink exact to="/" className="btn btn-link link-item">Flex Search</NavLink>
-      <NavLink to="/items" className="btn btn-link link-item">Master Item List</NavLink>
-      <NavLink to="/my-build" className="btn btn-link link-item">My Build</NavLink>
-      <NavLink to="/login" className="btn btn-link link-item">Login</NavLink>
-      <NavLink to="/register" className="btn btn-link link-item">Register</NavLink>
-    </aside>
+        <NavLink exact to="/" className="btn btn-block btn-light link-item">Flex Search</NavLink>
+        <NavLink to="/items" className="btn btn-block btn-light link-item">Master Item List</NavLink>
+        <NavLink to="/my-build" className="btn btn-block btn-light link-item">My Build</NavLink>
+        <NavLink to="/login" className="btn btn-block btn-light link-item">Login</NavLink>
+        <NavLink to="/register" className="btn btn-block btn-light link-item">Register</NavLink>
+      </aside>
     )
   }
 }

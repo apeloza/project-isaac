@@ -1,4 +1,25 @@
-// $body-bg: red;
+// Easily manage colors here
+
+$c_primary_light: #F71735;
+$c_primary: #FB3640;
+$c_primary_dark: #F56476;
+
+$c_accent: #41EAD4;
+$c_accent_dark: #011627;
+
+$c_white: #E8E9EB;
+$c_black: #161616;
+$c_grey_light: #BEBFC1;
+$c_grey: #404041;
+$c_grey_dark: #2B2B2B;
+
+// Set bootstrap's colors based on ours
+
+$white: $c_white;
+$black: $c_black;
+
+$primary: $c_primary;
+$secondary: $c_accent;
 
 /* Color schemes
 

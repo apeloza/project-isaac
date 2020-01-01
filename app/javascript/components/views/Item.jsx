@@ -49,8 +49,8 @@ class Item extends React.Component {
               closeTimeoutMS={800}
               onRequestClose={this.handleCloseModal}
               contentLabel={this.props.item.name}>
-                <button className="btn btn-danger modal-btn-close" aria-label="Close" onClick={this.handleCloseModal}>X</button>
                 <div className="modal-header item-modal-header">
+                    <button className="btn btn-danger modal-btn-close" aria-label="Close" onClick={this.handleCloseModal}>X</button>
                     <div className="item-modal-image-container">
                         <img className="item-modal-image top pixel-image" src={this.props.item.image_filename}/>
                         <img className="item-modal-image bottom pixel-image" src={ItemAltar}/>

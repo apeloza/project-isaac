@@ -1,0 +1,13 @@
+.btn, .btn:hover {
+	@include font-upheaval;
+	color: $black;
+	border: 2px $black solid;
+	border-bottom: 4px $black solid;
+	border-top: 1px $black solid;
+	line-height: 1rem;
+	padding: 8px 10px;
+}
+
+.btn-light:not(:disabled):not(.disabled).active {
+	border-color: $black;
+}
