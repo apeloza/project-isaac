@@ -27,10 +27,10 @@ class Item extends React.Component {
 
     render(){
         const activatedItemStats = (
-            <>
+            <div>
                 <h5>Active</h5>
                 <h5>Recharge Rate {this.props.item.recharge}</h5>
-            </>
+            </div>
         );
         const passiveItemStats = (
           <h5>Passive</h5>
@@ -64,8 +64,8 @@ class Item extends React.Component {
                     </div>
                     
                 </div>
-                <h2 align="center" className="item-name mt-1">{this.props.item.name}</h2>
-                <h5 align="center"><em>"{this.props.item.tagline}</em>"</h5>
+                <div className="item-modal-title">{this.props.item.name}</div>
+                <div className="item-modal-tagline"><em>"{this.props.item.tagline}</em>"</div>
                 {this.props.item.is_activated === 'Yes' ? activatedItemStats : passiveItemStats}
                 <div className="item-description-box mt-4">
                 <p>{this.props.item.description}</p>

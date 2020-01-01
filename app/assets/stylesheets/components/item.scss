@@ -1,4 +1,14 @@
-// New item grid styles
+// ITEM GRID + CARDS
+
+@mixin upheaval {
+    font-family: Upheaval, Arial, sans-serif;
+    color: white;
+    // pixelize font
+    -webkit-font-smoothing : none;
+    // outline
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000,
+                 -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
 
 .item-grid {
     display: flex;
@@ -13,27 +23,36 @@
 }
 
 .item-card-title {
+    @include upheaval;
+
     position: absolute;
     padding: 10px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: Upheaval, Arial, sans-serif;
-    color: white;
-    font-size: 24px;
-    line-height: 20px;
+    font-size: 1.5rem;
+    line-height: 1.25rem;
     text-align: center;
     opacity: 0;
     transition: opacity .25s;
-    // pixelize font
-    -webkit-font-smoothing : none;
-    // outline
-    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000,
-                 -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .item-card:hover .item-card-title {
     opacity: 1;
+}
+
+// ITEM MODAL
+
+.item-modal-title {
+    @include upheaval;
+
+    font-size: 3rem;
+    line-height: 2rem;
+    text-align: center;
+}
+
+.item-modal-tagline {
+    text-align: center;
 }
 
 // Old item styles
@@ -71,7 +90,7 @@
 
 .ReactModal__Overlay {
     opacity: 0;
-    transition: opacity 800ms ease-in-out;
+    transition: opacity .25s ease-in-out;
 }
 
 .ReactModal__Overlay--after-open{
