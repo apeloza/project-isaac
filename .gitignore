@@ -33,4 +33,4 @@ yarn-debug.log*
 # custom ignores
 .history
 .DS_Store
-
+dump.rdb

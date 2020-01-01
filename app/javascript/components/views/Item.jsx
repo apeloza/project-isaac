@@ -51,6 +51,7 @@ class Item extends React.Component {
               <Modal
               isOpen={this.state.showModal}
               closeTimeoutMS={800}
+              onRequestClose={this.handleCloseModal}
               contentLabel={this.props.item.name}>
                 <button className="btn btn-danger modal-btn-close" aria-label="Close" onClick={this.handleCloseModal}>X</button>
                 <div className="modal-header">
