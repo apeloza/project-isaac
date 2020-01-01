@@ -31,5 +31,9 @@ module ProjectIsaac
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Add fonts to asset pipeline
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+    config.assets.precompile += %w( .svg .eot .woff .ttf )
   end
 end

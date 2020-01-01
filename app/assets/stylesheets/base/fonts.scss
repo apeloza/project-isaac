@@ -1,0 +1,18 @@
+// Item Title Font
+@font-face {
+  font-family: 'Upheaval';
+  src: url('upheaval.ttf') format('truetype'),
+    url('upheaval.woff') format('woff'),
+    url('upheaval.woff2') format('woff2'),
+    url('upheaval.eot?#iefix') format('embedded-opentype');
+}
+
+// Menu Font
+@font-face {
+  font-family: 'IsaacGame';
+  src: url('IsaacGame.ttf') format('truetype');
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: Upheaval, Arial, sans-serif;
+}
