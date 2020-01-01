@@ -1,3 +1,43 @@
+// New item grid styles
+
+.item-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item-card {
+    position: relative;
+    cursor: pointer;
+    height: 128px;
+    width: 128px;
+}
+
+.item-card-title {
+    position: absolute;
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Upheaval, Arial, sans-serif;
+    color: white;
+    font-size: 24px;
+    line-height: 20px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .25s;
+    // pixelize font
+    -webkit-font-smoothing : none;
+    // outline
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000,
+                 -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.item-card:hover .item-card-title {
+    opacity: 1;
+}
+
+// Old item styles
+
 .item-modal-image{
     height: 128px;
     width: 128px;

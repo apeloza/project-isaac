@@ -37,15 +37,15 @@ class Item extends React.Component {
         );
 
         return(
-            <div className="col-sm-4 col-lg-4">
-              <div className="card mb-4" onClick={this.handleOpenModal}>
+            <div className="item-card">
+              <div onClick={this.handleOpenModal}>
                 <img
                 src={this.props.item.image_filename}
                 className="card-img-top pixel-image"
                 alt={`${this.props.item.name} image`}
                 />
-                <div className="card-body">
-                  <h5 className="card-title">{this.props.item.name}</h5>
+                <div className="item-card-title">
+                  {this.props.item.name}
                 </div>
               </div>
               <Modal
