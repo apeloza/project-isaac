@@ -11,3 +11,8 @@
 .btn-light:not(:disabled):not(.disabled).active {
 	border-color: $black;
 }
+
+.btn-close {
+	border: none;
+	font-size: 2rem;
+}

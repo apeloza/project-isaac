@@ -101,6 +101,19 @@
     image-rendering: pixelated;
 }
 
+// REACT MODAL STYLES
+
+.ReactModal__Overlay {
+    background-color: rgba(0, 0, 0, .8) !important;
+}
+
+.ReactModal__Content {
+    max-width: 600px;
+    margin: 0 auto;
+    border: 2px solid $black !important;
+    border-bottom: 4px solid $black !important;
+}
+
 // REACT MODAL ANIMATIONS
 
 .ReactModal__Overlay {
