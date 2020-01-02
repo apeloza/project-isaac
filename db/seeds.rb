@@ -8,7 +8,7 @@ URLS = {
   ITEM_PAGE_VALUES_TEMPLATE: "https://bindingofisaacrebirth.gamepedia.com/index.php?title=ITEM&action=pagevalues"
 }
 
-SCRAPE_IMAGES = false
+SCRAPE_IMAGES = true
 SCRAPE_KEYS = %w(name override_name quote description is_activated recharge description dlc)
 
 def process_item_list(document, css_selector)

@@ -43,11 +43,9 @@ class Items extends React.Component {
           );
 
           return(
-            <>
-              <div className="row">
+            <div className="item-grid">
               {items.length > 0 ? allItems : noItems}
-              </div>
-            </>
+            </div>
           );
     }
 }

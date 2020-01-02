@@ -1,43 +1,130 @@
-.item-modal-image{
+// ITEM GRID + CARDS
+
+.item-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item-card {
+    position: relative;
+    cursor: pointer;
     height: 128px;
     width: 128px;
-    text-align: center;
-    display: inline-block;
 }
+
+.item-card-title {
+    @include font-upheaval;
+    @include font_outline;
+
+    position: absolute;
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    line-height: 1.25rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .25s;
+}
+
+.item-card:hover .item-card-title {
+    opacity: 1;
+}
+
+// ITEM MODAL
+
+.item-modal-header {
+    position: relative;
+    border: none;
+}
+
+.modal-btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.item-modal-title {
+    @include font-upheaval;
+    font-size: 3rem;
+    line-height: 2rem;
+    text-align: center;
+}
+
+.item-modal-tagline {
+    @include font-isaac;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.item-modal-image-container {
+    position: relative;
+    height: 224px;
+    width: 128px;
+    margin: 0 auto;
+}
+
+.item-modal-image {
+    position: absolute;
+    height: 128px;
+    width: 128px;
+}
+
+.item-modal-image.top {
+    top: 0;
+    left: 0;
+    z-index: 1;
+    animation: image-float-animation ease-in-out 2s infinite;
+}
+
+.item-modal-image.bottom {
+    bottom: 0;
+    left: 0;
+}
+
+@keyframes image-float-animation {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 16px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+// UTILITY
 
 .pixel-image{
     image-rendering: pixelated;
 }
 
-.image-container{
-    width: 100%;
+// REACT MODAL STYLES
+
+.ReactModal__Overlay {
+    background-color: rgba(0, 0, 0, .8) !important;
 }
 
-.item-modal-header{
-    text-align: center;
-    width: 100%;
+.ReactModal__Content {
+    max-width: 600px;
+    margin: 0 auto;
+    border: 2px solid $black !important;
+    border-bottom: 4px solid $black !important;
 }
 
-.modal-btn-close{
-    float: right;
-}
-
-.item-altar{
-    width: 108px;
-    height: 96px;
-}
-
-// ANIMATIONS
+// REACT MODAL ANIMATIONS
 
 .ReactModal__Overlay {
     opacity: 0;
-    transition: opacity 800ms ease-in-out;
+    transition: opacity .25s ease-in-out;
 }
 
-.ReactModal__Overlay--after-open{
+.ReactModal__Overlay--after-open {
     opacity: 1;
 }
 
-.ReactModal__Overlay--before-close{
+.ReactModal__Overlay--before-close {
     opacity: 0;
 }

@@ -1,5 +1,15 @@
-@import 'libraries/bootstrap.min';   
-@import 'components/navmenu';
-@import 'components/item';
-@import 'components/base';
+// Base
+@import "base/fonts";
 
+// BOOTSTRAP
+
+@import "base/bootstrap_vars";
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+@import "base/bootstrap_overrides";
+
+// COMPONENTS
+
+@import "components/button";
+@import "components/form";
+@import "components/item";
+@import "components/navmenu";

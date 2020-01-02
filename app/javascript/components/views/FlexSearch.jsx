@@ -54,33 +54,33 @@ class FlexSearch extends React.Component {
 
         //wrapper to conditionally display the search results header
         const allResultsWithHeader = 
-        <>
-        <div className="row">
-        <h5 className="col-sm-12">Returned {searchResults.result_count} items in {searchResults.time_taken} ms.</h5>
+        <div>
+          <div className="row">
+            <div className="col">
+              <p>Returned {searchResults.result_count} items in {searchResults.time_taken} ms.</p>
+            </div>
+          </div>
+          <div className="row">
+          {allResults}
+          </div>
         </div>
-        <div className="row">
-        {allResults}
-        </div>
-        </>
 
         //placeholder before a search is started
         const noResults = (
           <div className="row">
-            <h5>Try a search above to begin!</h5>
+            <div className="col">
+              <p>Try a search above to begin!</p>
+            </div>
           </div>
         );
         return(
-            <>
-                <form onSubmit={this.onSubmit}>
-                  <div className="row">
-                    <div className="col-sm mb-2">
-                      <input name="searchTerms" id="SearchTerms" onChange={this.onChange} placeholder="Search for items ..." type="text"/>
-                      <button className="btn btn-primary ml-2" type="submit">Search</button>
-                    </div>
-                  </div>
+            <div>
+                <form className="form form-inline mb-2" onSubmit={this.onSubmit}>
+                  <input name="searchTerms" id="SearchTerms" onChange={this.onChange} placeholder="Search for items ..." type="text" className="form-control flex-grow-1" />
+                  <button className="btn btn-primary ml-2" type="submit">Search</button>
                 </form>
-                  {searchResults.items.length > 0 ? allResultsWithHeader : noResults}
-            </>
+                {searchResults.items.length > 0 ? allResultsWithHeader : noResults}
+            </div>
             
         )
     }
