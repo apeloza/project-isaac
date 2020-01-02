@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.search params[:q], fields: [:name, :tagline]
+    @items = Item.search params[:q], fields: [:name], match: :word_start
   end
 
   def show

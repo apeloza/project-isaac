@@ -1,3 +1,11 @@
 class Item < ApplicationRecord
-    searchkick
+  searchkick word_start: [:name]
+
+  def search_data
+    {
+      name: name,
+      tagline: tagline,
+      description: description
+    }
+  end
 end
