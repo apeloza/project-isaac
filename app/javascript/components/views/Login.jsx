@@ -22,21 +22,30 @@ class Login extends React.Component{
     onSubmit(event){
         event.preventDefault();
         const { email, password } = this.state;
-       if(email.length === 0 || password.length === 0) 
+       if(email.length === 0 || password.length === 0) //invalid request so don't bother sending it
         return;
 
+        //has to be wrapped in a user for Devise
         const loginPackage = {
-            email: email,
-            password: password
+            user:{
+                email: email,
+                password: password
+            }
         }
+
+        const token = document.querySelector('meta[name="csrf-token"]').content;
+        const url = "/users/sign_in";
 
       fetch(url, {
         method: "POST",
         data: loginPackage,
-        url: '/login'
+        headers: {
+            "X-CSRF-Token": token,
+            "Content-Type": "application/json",
+        },
       }).then(response => {
         if(response.ok){
-          return response.json();
+          return response.text();
         }
         throw new Error("Issue with network response. Oops!")
       }).then(response => {
@@ -54,11 +63,11 @@ class Login extends React.Component{
                 <div className="row">
                     <div className="col-sm-12">
                         <label htmlFor="email" className="mr-2">Email</label>
-                        <input type="text" name="email" id="Email"/>
+                        <input onChange={this.onChange} type="text" name="email" id="Email"/>
                     </div>
                     <div className="col-sm-12">
                         <label htmlFor="password" className="mr-2">Password</label>
-                        <input type="password" name="password" id="Password"/>
+                        <input onChange={this.onChange} type="password" name="password" id="Password"/>
                     </div>
                 </div>
                 <div className="row">

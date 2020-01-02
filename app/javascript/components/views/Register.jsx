@@ -34,7 +34,6 @@ class Register extends React.Component{
         }
 
         const token = document.querySelector('meta[name="csrf-token"]').content;
-
         const url = '/users';
 
         fetch(url, {

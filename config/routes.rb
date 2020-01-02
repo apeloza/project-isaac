@@ -4,8 +4,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'} 
   get 'items/index'
   get 'items/search'
-  get 'items/show'
-  post 'login/login'
+  get '/users/check_for_user', to: 'users#check_for_user'
   root 'home#index'
   get '/*path' => 'home#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

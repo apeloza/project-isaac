@@ -22,7 +22,7 @@ class App extends React.Component {
             method: "GET",
           }).then(response => {
             if(response.ok){
-              return response.json();
+              return response.text();
             }
             throw new Error("Issue with network response. Oops!")
           }).then(response => {

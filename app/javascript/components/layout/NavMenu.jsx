@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Logout from "../views/Logout";
 
 class NavMenu extends React.Component {
 
@@ -15,6 +16,7 @@ class NavMenu extends React.Component {
         <NavLink to="/my-build" className="btn btn-block btn-light link-item">My Build</NavLink>
         <NavLink to="/login" className="btn btn-block btn-light link-item">Login</NavLink>
         <NavLink to="/register" className="btn btn-block btn-light link-item">Register</NavLink>
+        <Logout/>
       </aside>
     )
   }

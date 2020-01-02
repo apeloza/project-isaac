@@ -9,9 +9,6 @@ class ItemsController < ApplicationController
     @items = Item.search params[:q], fields: [:name, :tagline]
   end
 
-  def show
-  end
-
   def update
   end
 end
