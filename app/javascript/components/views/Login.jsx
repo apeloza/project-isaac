@@ -36,16 +36,18 @@ class Login extends React.Component{
         const token = document.querySelector('meta[name="csrf-token"]').content;
         const url = "/users/sign_in";
 
+        console.log(loginPackage);
+
       fetch(url, {
         method: "POST",
-        data: loginPackage,
+        body: JSON.stringify(loginPackage),
         headers: {
             "X-CSRF-Token": token,
             "Content-Type": "application/json",
         },
       }).then(response => {
         if(response.ok){
-          return response.text();
+          return response.json();
         }
         throw new Error("Issue with network response. Oops!")
       }).then(response => {
