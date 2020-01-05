@@ -3,7 +3,7 @@
 
 
 import React from "react";
-import Routes from "../routes/Index";
+import NavRouter from "../routes/NavRouter";
 
 
 class App extends React.Component {
@@ -22,13 +22,12 @@ class App extends React.Component {
             method: "GET",
           }).then(response => {
             if(response.ok){
-              return response.text();
+              return response.json();
             }
             throw new Error("Issue with network response. Oops!")
           }).then(response => {
-            console.log(response);
-            if(response.data.email){
-                this.setState({currentUser: response.data.email});
+            if(response.email){
+                this.setState({currentUser: response.email});
             } else {
                 this.setState({currentUser: null});
             }
@@ -44,7 +43,9 @@ class App extends React.Component {
         return(
             <div className="container">
                 <div className="row">
-                {Routes}
+                <NavRouter 
+                currentUser={this.state.currentUser} 
+                updateCurrentUser={this.updateCurrentUser} />
                 </div>
             </div>
         )

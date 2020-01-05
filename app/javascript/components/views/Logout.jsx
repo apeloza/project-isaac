@@ -1,4 +1,5 @@
 import React from 'react';
+import { updateCSRF } from '../../helpers/auth';
 
 class Logout extends React.Component{
     constructor(props){
@@ -17,11 +18,12 @@ class Logout extends React.Component{
             },
           }).then(response => {
             if(response.ok){
-              return response.json();
+                updateCSRF(response); //update CSRF so our login actions continue to work without refreshing
+                return response.text(); //empty response from a logout action
             }
             throw new Error("Issue with network response. Oops!")
           }).then(response => {
-            console.log(response);
+            this.props.updateCurrentUser(null); //sets all views to non-user
         }).catch(error => console.log(error.message));
     }
 
