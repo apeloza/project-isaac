@@ -4,6 +4,8 @@
 
 import React from "react";
 import NavRouter from "../routes/NavRouter";
+import UserMenu from "../components/layout/UserMenu";
+import LogoHeader from "./layout/LogoHeader";
 
 
 class App extends React.Component {
@@ -42,6 +44,10 @@ class App extends React.Component {
     render(){
         return(
             <div className="container">
+                <div className="row align-items-center justify-content-end mt-2 mb-3">
+                    <div className="col-sm-4"><LogoHeader/></div>
+                    <div className="col-sm"><UserMenu currentUser={this.state.currentUser} updateCurrentUser={this.updateCurrentUser}/></div>
+                </div>
                 <div className="row">
                 <NavRouter 
                 currentUser={this.state.currentUser} 

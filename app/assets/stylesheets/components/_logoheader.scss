@@ -1,0 +1,9 @@
+.logo-image{
+  image-rendering: pixelated;
+  width: 75px;
+}
+
+.logo-text{
+  @include font-upheaval;
+    @include font_outline;
+}

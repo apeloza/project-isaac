@@ -1,5 +1,5 @@
 import React from 'react';
-import { updateCSRF } from '../../helpers/auth';
+import { updateCSRF } from '../../../helpers/auth';
 
 class Login extends React.Component{
     constructor(props){
@@ -58,26 +58,11 @@ class Login extends React.Component{
     render(){
 
       return(
-          <>
-          <div className="row">
-            <h5>Login</h5>
-          </div>
-          <form onSubmit={this.onSubmit}>
-            <div className="row">
-              <div className="col-sm-12">
-                  <label htmlFor="email" className="mr-2">Email</label>
-                  <input onChange={this.onChange} type="text" name="email" id="Email"/>
-              </div>
-              <div className="col-sm-12">
-                  <label htmlFor="password" className="mr-2">Password</label>
-                  <input onChange={this.onChange} type="password" name="password" id="Password"/>
-              </div>
-            </div>
-            <div className="row">
-                <button type="submit" className="btn btn-primary">Login</button>
-            </div>
+          <form onSubmit={this.onSubmit} className="form-inline d-flex justify-content-end">
+            <input onChange={this.onChange} className="mr-2 form-control" placeholder="Email" type="text" name="email" id="Email"/>
+            <input onChange={this.onChange} className="mr-2 form-control" placeholder="Password" type="password" name="password" id="Password"/>
+            <button type="submit" className="btn btn-light">Login</button>
           </form>
-          </>
       )
   }
 

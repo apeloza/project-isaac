@@ -7,9 +7,15 @@
 @import "../../../node_modules/bootstrap/scss/bootstrap";
 @import "base/bootstrap_overrides";
 
+// HELPERS
+
+@import "base/helpers";
+
 // COMPONENTS
 
 @import "components/button";
 @import "components/form";
 @import "components/item";
 @import "components/navmenu";
+@import "components/usermenu";
+@import "components/logoheader";
