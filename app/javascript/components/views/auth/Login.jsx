@@ -1,13 +1,14 @@
 import React from 'react';
 import { updateCSRF } from '../../../helpers/auth';
 
+//login fields found in the top right (if not logged in)
 class Login extends React.Component{
     constructor(props){
       super(props);
         
       this.state = {
-          email: '',
-          password: '',
+          email: "",
+          password: "",
       }
 
       this.onChange = this.onChange.bind(this);

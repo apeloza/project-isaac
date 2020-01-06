@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import UserMenu from "./UserMenu";
 
+//Navigation menu found on the left 
 class NavMenu extends React.Component {
 
   constructor(props){

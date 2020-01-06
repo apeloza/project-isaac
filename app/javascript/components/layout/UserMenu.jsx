@@ -2,6 +2,7 @@ import React from 'react';
 import Logout from '../views/auth/Logout';
 import Login from '../views/auth/Login';
 
+//container for both login and logout + may have user settings here in the future
 class UserMenu extends React.Component{
   constructor(props){
     super(props);
@@ -9,7 +10,7 @@ class UserMenu extends React.Component{
 
   render(){
 
-        //render either the login or logout here, as necessary
+    //render either the login or logout here, as necessary
     let contextualLogin = <Login updateCurrentUser={this.props.updateCurrentUser}/>
     if(this.props.currentUser !== null){
       contextualLogin = <Logout updateCurrentUser={this.props.updateCurrentUser} currentUser={this.props.currentUser} />

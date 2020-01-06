@@ -1,6 +1,7 @@
 import React from 'react';
 import { updateCSRF } from '../../../helpers/auth';
 
+//displays current user email + logout button
 class Logout extends React.Component{
   constructor(props){
     super(props);

@@ -4,7 +4,6 @@ import NavMenu from "../components/layout/NavMenu";
 import FlexSearch from "../components/views/FlexSearch";
 import Items from "../components/views/Items";
 import MyBuild from "../components/views/MyBuild";
-import Login from "../components/views/auth/Login";
 import Register from "../components/views/auth/Register";
 
 class NavRouter extends React.Component{
