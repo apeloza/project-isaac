@@ -1,5 +1,6 @@
 import React from 'react';
 import { updateCSRF } from '../../../helpers/auth';
+import { NavLink } from "react-router-dom";
 
 //login fields found in the top right (if not logged in)
 class Login extends React.Component{
@@ -63,6 +64,7 @@ class Login extends React.Component{
             <input onChange={this.onChange} className="mr-2 form-control" placeholder="Email" type="text" name="email" id="Email"/>
             <input onChange={this.onChange} className="mr-2 form-control" placeholder="Password" type="password" name="password" id="Password"/>
             <button type="submit" className="btn btn-light">Login</button>
+            <NavLink to="/register" className="btn btn-light link-item ml-2">Register</NavLink>
           </form>
       )
   }
