@@ -14,7 +14,7 @@ class NavRouter extends React.Component{
   render(){
 
     return(
-      <Router>
+      <>
         <div className="col-sm-2">
           <NavMenu currentUser={this.props.currentUser} updateCurrentUser={this.props.updateCurrentUser}/>
         </div>
@@ -26,7 +26,7 @@ class NavRouter extends React.Component{
             <Route path="/register" exact render={() => <Register currentUser={this.props.currentUser} updateCurrentUser={this.props.updateCurrentUser} />} />
           </Switch>
         </div>
-      </Router>
+      </>
     )
   }
 }
