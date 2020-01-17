@@ -14,10 +14,13 @@ class App extends React.Component {
 
       //current user is held here and propagated to children as necessary
       this.state = {
-        currentUser: null
+        currentUser: null,
+        currentBuild: [],
       }
 
       this.updateCurrentUser = this.updateCurrentUser.bind(this);
+      this.addItem = this.addItem.bind(this);
+      this.removeItem = this.removeItem.bind(this);
     }
 
     //checks who the current user is (if any) as soon as component loads
@@ -42,6 +45,18 @@ class App extends React.Component {
     updateCurrentUser(email){
       this.setState({currentUser: email});
     }
+    
+    addItem(item){
+      const newBuild = this.state.currentBuild.concat(item);
+      this.setState({currentBuild: newBuild});
+    }
+
+    removeItem(itemToRemove){
+      const newBuild = this.state.currentBuild.slice();
+      const itemIndex = newBuild.findIndex(item => item.name === itemToRemove.name) // find the first instance of an item with matching name
+      newBuild.splice(itemIndex, 1); //remove first index found
+      this.setState({currentBuild: newBuild}) 
+    }
 
     render(){
       return(
@@ -54,7 +69,10 @@ class App extends React.Component {
             <div className="row">
               <NavRouter
               currentUser={this.state.currentUser} 
-              updateCurrentUser={this.updateCurrentUser} />
+              updateCurrentUser={this.updateCurrentUser}
+              currentBuild={this.state.currentBuild}
+              addItem={this.addItem}
+              removeItem={this.removeItem} />
             </div>
           </div>
         </Router>

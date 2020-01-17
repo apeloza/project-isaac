@@ -8,7 +8,6 @@
 .item-card {
     position: relative;
     cursor: pointer;
-    height: 128px;
     width: 128px;
 }
 
@@ -31,6 +30,17 @@
 .item-card:hover .item-card-title {
     opacity: 1;
 }
+
+.item-btn-container{
+    display: block;
+    margin: 0 auto;
+    width: 70px;
+}
+
+.item-btn{
+	width: 35px;
+}
+
 
 // ITEM MODAL
 

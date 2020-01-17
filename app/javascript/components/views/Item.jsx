@@ -9,12 +9,24 @@ class Item extends React.Component {
 
     this.state = {
         showModal : false, // modal boolean for the item
+        isItemInBuild: false,
     };
 
     Modal.setAppElement('#ReactRoot'); //used for accessibility to let screen readers know what is hidden by the modal
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
+    this.isItemInBuild = this.isItemInBuild.bind(this);
+  }
+
+  componentDidMount(){
+    //check if item is still in build
+    this.isItemInBuild();
+  }
+
+  componentDidUpdate(){
+    //check if item is still in build
+    this.isItemInBuild();
   }
 
   handleOpenModal(){
@@ -23,6 +35,15 @@ class Item extends React.Component {
 
   handleCloseModal(){
       this.setState({showModal: false});
+  }
+
+  //takes no argument because it is evaluating this.props.item
+  isItemInBuild(){
+    const itemIndex = this.props.currentBuild.findIndex(item => item.name === this.props.item.name) // find the first instance of an item with matching name
+    const isItemInBuild = itemIndex === -1 ? false : true; //if itemIndex is -1 then item is not present
+
+    //it is important that we check this or we will have an infinite loop due to componentDidUpdate
+    if(this.state.isItemInBuild !== isItemInBuild) this.setState({isItemInBuild: isItemInBuild});
   }
 
   render(){
@@ -45,6 +66,10 @@ class Item extends React.Component {
           <div className="item-card-title">
             {this.props.item.name}
           </div>
+        </div> 
+        <div className="item-btn-container">
+        <button onClick={() => this.props.addItem(this.props.item)} className="btn btn-light item-btn">+</button>
+        <button disabled={!this.state.isItemInBuild} onClick={() => this.props.removeItem(this.props.item)} className="btn btn-light item-btn">-</button>
         </div>
 
         {/* modal here */}

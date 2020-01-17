@@ -6,6 +6,8 @@ import Items from "../components/views/Items";
 import MyBuild from "../components/views/MyBuild";
 import Register from "../components/views/auth/Register";
 
+//the switch case in this file hands *a lot* of passing through of props. This is a good place to look if a property isn't coming through as expected.
+
 class NavRouter extends React.Component{
   constructor(props){
     super(props);
@@ -20,9 +22,9 @@ class NavRouter extends React.Component{
         </div>
         <div className="col-sm-10">
           <Switch>
-            <Route path="/" exact component={FlexSearch} />
+            <Route path="/" exact render={() => <FlexSearch addItem={this.props.addItem} removeItem={this.props.removeItem} currentBuild={this.props.currentBuild} />} />
             <Route path="/items" exact component={Items} />
-            <Route path="/my-build" exact component={MyBuild} />
+            <Route path="/my-build" exact render={() => <MyBuild addItem={this.props.addItem} removeItem={this.props.removeItem} currentBuild={this.props.currentBuild} />} />
             <Route path="/register" exact render={() => <Register currentUser={this.props.currentUser} updateCurrentUser={this.props.updateCurrentUser} />} />
           </Switch>
         </div>

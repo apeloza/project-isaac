@@ -48,7 +48,7 @@ class FlexSearch extends React.Component {
 
       //map of our results, used below
       const allResults = searchResults.items.map((item, index) => (
-        <Item key={index} item={item} />
+        <Item currentBuild={this.props.currentBuild} key={index} item={item} addItem={this.props.addItem} removeItem={this.props.removeItem} />
       ));
 
       //wrapper around results
