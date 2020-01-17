@@ -23,7 +23,7 @@ class NavRouter extends React.Component{
         <div className="col-sm-10">
           <Switch>
             <Route path="/" exact render={() => <FlexSearch addItem={this.props.addItem} removeItem={this.props.removeItem} currentBuild={this.props.currentBuild} />} />
-            <Route path="/items" exact component={Items} />
+            <Route path="/items" exact render={() => <Items addItem={this.props.addItem} removeItem={this.props.removeItem} currentBuild={this.props.currentBuild} />} />
             <Route path="/my-build" exact render={() => <MyBuild addItem={this.props.addItem} removeItem={this.props.removeItem} currentBuild={this.props.currentBuild} />} />
             <Route path="/register" exact render={() => <Register currentUser={this.props.currentUser} updateCurrentUser={this.props.updateCurrentUser} />} />
           </Switch>

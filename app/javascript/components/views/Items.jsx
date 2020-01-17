@@ -30,7 +30,7 @@ class Items extends React.Component {
 
       //map each item onto an Item component
       const allItems = items.map((item, index) => (
-        <Item key={index} item={item} />
+        <Item key={index} item={item} addItem={this.props.addItem} removeItem={this.props.removeItem} currentBuild={this.props.currentBuild} />
       ));
 
       //placeholder message for initial pageload
