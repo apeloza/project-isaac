@@ -53,7 +53,12 @@ class Login extends React.Component{
           }
           throw new Error("Issue with network response. Oops!")
       }).then(response => {
+        if(response.id){
           this.props.updateCurrentUser(response.email);
+        } else {
+          //TODO: Inform user of unsuccessful login here
+          console.log('unsuccessful');
+        }
       }).catch(error => console.log(error.message));
       }
 
