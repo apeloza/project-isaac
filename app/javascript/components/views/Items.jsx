@@ -9,13 +9,11 @@ class Items extends React.Component {
           items: [], //array of all items that will be received from the server
       };
 
-      this._isMounted = false; //used to avoid memory leaks
     }
 
     componentDidMount(){
-      this._isMounted = true; // set to true once component is loaded
       const url = "/items/index";
-      this._isMounted && fetch(url)  
+      fetch(url)  
       .then(response => {
           if(response.ok) {
               return response.json();
@@ -30,7 +28,7 @@ class Items extends React.Component {
 
       //map each item onto an Item component
       const allItems = items.map((item, index) => (
-        <Item key={index} item={item} addItem={this.props.addItem} removeItem={this.props.removeItem} currentBuild={this.props.currentBuild} />
+        <Item key={index} item={item} addItem={this.props.addItem} aesthetic={this.props.aesthetic} removeItem={this.props.removeItem} currentBuild={this.props.currentBuild} />
       ));
 
       //placeholder message for initial pageload

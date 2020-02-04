@@ -1,4 +1,5 @@
 json.array! @items do |item|
+  json.item_id item.id
   json.name item.name
   json.tagline item.tagline
   json.description item.description

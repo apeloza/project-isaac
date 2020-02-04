@@ -3,6 +3,7 @@ json.result_count @items.total_count
 
 json.items do |items_json|
   items_json.array! @items do |item|
+    json.item_id item.id
     json.name item.name
     json.tagline item.tagline
     json.description item.description

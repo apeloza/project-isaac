@@ -1,6 +1,8 @@
 import React from 'react';
 import Modal from 'react-modal';
 import ItemAltar from '../../../assets/images/items/item_altar'; //template image for the item modal
+import sadface from "../../../assets/images/items/sadface.png";
+
 
 //Items, both the modal and the thumbnail are located here
 class Item extends React.Component {
@@ -57,12 +59,17 @@ class Item extends React.Component {
       <h5>Passive</h5>
     );
 
+     let itemThumbnail = <img src={this.props.item.image_filename} className="card-img-top pixel-image" alt={`${this.props.item.name} image`} />
+
+    if(this.props.aesthetic === true){
+      itemThumbnail = <img src={sadface} className="card-img-top pixel-image sad-face" alt={`${this.props.item.name} image`} />
+    } 
+
     return(
       <div className="item-card">
-        
+        {itemThumbnail}
         {/* thumbnail here */}
         <div onClick={this.handleOpenModal}>
-          <img src={this.props.item.image_filename} className="card-img-top pixel-image" alt={`${this.props.item.name} image`} />
           <div className="item-card-title">
             {this.props.item.name}
           </div>

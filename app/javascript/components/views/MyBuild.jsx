@@ -11,7 +11,7 @@ class MyBuild extends React.Component {
 
     //map of the items inside of currentBuild
     const currentBuild = this.props.currentBuild.map((item, itemIndex) => (
-      <Item key={itemIndex} currentBuild={this.props.currentBuild} addItem={this.props.addItem} removeItem={this.props.removeItem} item={item}/>
+      <Item key={itemIndex} currentBuild={this.props.currentBuild} addItem={this.props.addItem} aesthetic={this.props.aesthetic} removeItem={this.props.removeItem} item={item}/>
     ));
 
     return(

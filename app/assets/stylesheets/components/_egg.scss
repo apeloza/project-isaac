@@ -1,0 +1,17 @@
+// EASTER EGG ANIMATIONS
+
+.sad-face{
+  animation: hue-shift-animation ease-in-out 2s infinite;
+}
+
+@keyframes hue-shift-animation {
+  0%{
+    filter: hue-rotate(360deg);
+  }
+  50%{
+    filter: hue-rotate(180deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}

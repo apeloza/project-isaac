@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'items/index'
   get 'items/search'
   get '/users/check_for_user', to: 'users#check_for_user'
+  post '/builds/save_build', to: 'builds#save_build'
   root 'home#index'
   get '/*path' => 'home#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
